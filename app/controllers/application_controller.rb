@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     def homepage
-     render({:template => "/infinite.html.erb"}))
+     render({:template => "homepage_templates/index.html.erb"})
     end 
 
 end
