@@ -1,13 +1,13 @@
 <h1>Convert <%=@first_currency%></h1>
 
-<p>Go <a href="/"> back.</a></p>
+<p>Go <a href="/forex"> back.</a></p>
 
 <div>
 <ul>
     <% @array_of_currencies.each do |currency_key|  %> 
     <li>
       <a href="/forex/<%= @first_currency %>/<%= currency_key.to_s %>">
-      Convert <%= @first_currency %> to <%= currency_key.to_s %>
+      Convert 1 <%= @first_currency %> to <%= currency_key.to_s %>
       </a>
     </li>
     <% end %>
