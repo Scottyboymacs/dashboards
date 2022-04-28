@@ -1,12 +1,15 @@
 <h1>Currency pairs</h1>
 
-<div>Go <a href="/"> back.</a></div>
-
+<p>Go <a href="/"> back.</a></p>
 
 <div>
 <ul>
+    <% @array_of_currencies.each do |currency_key|  %> 
     <li>
-      placeholder
+      <a href="/forex/" + currency_key.to_s> 
+      Convert <%= currency_key.to_s %> to...
+      </a>
     </li>
+    <% end %>
 </ul>
 </div>
