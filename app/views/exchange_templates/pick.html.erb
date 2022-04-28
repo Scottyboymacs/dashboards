@@ -6,7 +6,7 @@
 <ul>
     <% @array_of_currencies.each do |currency_key|  %> 
     <li>
-      <a href="/forex/" + currency_key.to_s> 
+      <a href="/forex/<%=currency_key.to_s%>">
       Convert <%= currency_key.to_s %> to...
       </a>
     </li>
