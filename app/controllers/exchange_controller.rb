@@ -26,11 +26,11 @@ class ExchangeController < ApplicationController
   def converter
     @first_currency  = params.fetch("first_currency")
     @second_currency  = params.fetch("second_currency")
-    @webaddress = "https://api.exchangerate.host/convert?from="+@first_currency+"to="+@second_currency
-    exchange_raw_string = open(@webaddress).read
-    exchange_JSON = JSON.parse(exchange_raw_string)
-    exchange_rate_hash = exchange_JSON.fetch("info")
-    @exchange_rate = exchange_rate_hash.fetch(:rate)
+    @webaddress = "https://api.exchangerate.host/convert?from="+@first_currency+"&to="+@second_currency
+    @exchange_raw_string = open(@webaddress).read
+    @exchange_JSON = JSON.parse(@exchange_raw_string)
+    @exchange_rate_hash = @exchange_JSON.fetch("info")
+    @exchange_rate = @exchange_rate_hash.fetch("rate")
     
     render({:template => "exchange_templates/convert.html.erb"})
   end
